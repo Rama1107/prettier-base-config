@@ -1,0 +1,19 @@
+name: publish-prettier-config-npm-package
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and push image
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/setup-node@master
+        with:
+          version: 12
+          registry-url: 'https://registry.npmjs.org'
+      - uses: shawnbot/npm-publish-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
