@@ -2,12 +2,12 @@ name: publish-prettier-config-npm-package
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
     name: Build and push image
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/setup-node@master
         with:
