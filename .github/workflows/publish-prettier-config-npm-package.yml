@@ -8,13 +8,3 @@ jobs:
   build:
     name: Build and push image
     runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@master
-        with:
-          version: 12
-          registry-url: 'https://registry.npmjs.org'
-      - uses: shawnbot/npm-publish-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
