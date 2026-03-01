@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm publish
+      - run: npm publish --provenance --access publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_2 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
 
           
 # name: publish-prettier-config-npm-package
