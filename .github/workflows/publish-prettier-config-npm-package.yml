@@ -4,9 +4,9 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  id-token: write
+# permissions:
+#   contents: read
+#   id-token: write
 
 jobs:
   publish:
@@ -16,12 +16,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org'
       - run: npm publish --provenance --access publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
+          # NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
 
           
 # name: publish-prettier-config-npm-package
