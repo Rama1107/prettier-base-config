@@ -2,3 +2,7 @@ node_modules/
 build/
 .github
 .gitignore
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

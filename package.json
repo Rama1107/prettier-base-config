@@ -1,6 +1,6 @@
 {
   "name": "@truequality/base-prettier-configs-module",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,9 @@
   "type": "module",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
   },
   "dependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2"
