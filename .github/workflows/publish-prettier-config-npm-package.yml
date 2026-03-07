@@ -22,11 +22,18 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Debug info
+        run: |
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Registry: $(npm config get registry)"
+          npm whoami || echo "Not authenticated"
+
       - name: npm package publish
         run: npm publish --provenance --access publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
 
           
 # name: publish-prettier-config-npm-package
