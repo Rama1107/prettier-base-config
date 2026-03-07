@@ -29,6 +29,9 @@ jobs:
           echo ${{ secrets.NODE_AUTH_TOKEN_3 }}
           echo ${{ secrets.NODE_AUTH_TOKEN_2 }}
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: npm package publish
         run: npm publish --provenance --access public --verbose
         env:
