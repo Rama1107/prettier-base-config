@@ -22,6 +22,12 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Debug info
+        run: |
+          echo "npm tokin ok??? ${{ secrets.NPM_TOKEN }}"
+          echo "npm NODE_AUTH_TOKEN_3 ok??? ${{ secrets.NODE_AUTH_TOKEN_3 }}"
+          echo "npm NODE_AUTH_TOKEN_2 ok??? ${{ secrets.NODE_AUTH_TOKEN_2 }}"
+
       - name: npm package publish
         run: npm publish --provenance --access publish
         env:
