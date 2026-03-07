@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "test",
   "type": "module",
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
