@@ -37,7 +37,7 @@ jobs:
       - name: npm package publish
         run: npm publish --verbose
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN_3 }}
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           
