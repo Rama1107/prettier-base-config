@@ -19,16 +19,15 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: Debug info
         run: |
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Registry: $(npm config get registry)"
           npm whoami
-          echo ${{ secrets.GITHUB_TOKEN }} | sed 's/./& /g'
-          echo ${{ secrets.NPM_TOKEN }} | sed 's/./& /g'
-          echo ${{ secrets.NODE_AUTH_TOKEN_3 }} | sed 's/./& /g'
-          echo ${{ secrets.NODE_AUTH_TOKEN_2 }} | sed 's/./& /g'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,16 +36,9 @@ jobs:
 
       - name: npm package publish
         run: npm publish --verbose
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Debug info
-        run: |
-          echo "Node version: $(node --version)"
-          echo "NPM version: $(npm --version)"
-          echo "Registry: $(npm config get registry)"
-          npm whoami
 
           
 # name: publish-prettier-config-npm-package
