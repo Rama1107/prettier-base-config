@@ -15,7 +15,7 @@ const config = {
     "typescript"
   ],
   importOrder: ["<THIRD_PARTY_MODULES>", "^@/(.*)$", "^../(.*)", "^./(.*)"],
-  plugins: [""]
+  plugins: ["@trivago/prettier-plugin-sort-imports"]
 };
 
 export default config;
